@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
-test("front page renders successfully", () => {
+test("Front page loads with expected text", () => {
   render(<App/>);
   const text1 = screen.getByText('Welcome to Riddle CI');
   const text2 = screen.getByText('Why did the circle bring a friend to the party?');
@@ -11,7 +11,7 @@ test("front page renders successfully", () => {
   expect(text2).toBeInTheDocument();
 });
 
-test('new text after button click', () => {
+test('New text displays after button click', () => {
   render(<App/>);
   const button = screen.getByText('Why did the circle bring a friend to the party?');
   fireEvent.click(button);
